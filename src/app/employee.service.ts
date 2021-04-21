@@ -24,5 +24,9 @@ export class EmployeeService {
       this.employees.push(employee)
     }
   }
+
+  deleteEmployee(employee: Employee){
+    this.employees = this.employees.filter(empl => empl !== employee)
+  }
 }
 

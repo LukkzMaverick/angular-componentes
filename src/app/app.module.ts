@@ -8,7 +8,10 @@ import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SalaryTypeDirective } from './salary-type.directive';
 import { EmployeeNewModalComponent } from './employee-new-modal/employee-new-modal.component';
-import { AlertSuccessComponent } from './alert-success/alert-success.component'
+import { AlertSuccessComponent } from './alert-success/alert-success.component';
+import { EmployeeEditModalComponent } from './employee-edit-modal/employee-edit-modal.component';
+import { EmployeeDeleteModalComponent } from './employee-delete-modal/employee-delete-modal.component';
+import { MyCurrencyPipe } from './my-currency.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,10 @@ import { AlertSuccessComponent } from './alert-success/alert-success.component'
     EmployeeNewComponent,
     SalaryTypeDirective,
     EmployeeNewModalComponent,
-    AlertSuccessComponent
+    AlertSuccessComponent,
+    EmployeeEditModalComponent,
+    EmployeeDeleteModalComponent,
+    MyCurrencyPipe
   ],
   imports: [
     BrowserModule,

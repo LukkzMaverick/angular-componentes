@@ -2,7 +2,6 @@
     <alert-success [hidden]="!showMessageSucess">O empregado <strong>{{employee?.name}}</strong> foi cadastrado com sucesso!</alert-success>
     <div class="row">
         <h1>Nossos Empregados</h1>
-        <p salaryType="20000">kk</p>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -14,13 +13,18 @@
                     <th>Nome</th>
                     <th>Salário</th>
                     <th>Bônus</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let employee of employeeService.employees; let i = index" [id]="'tr'+i">
                     <td>{{employee.name}}</td>
-                    <td salaryType="{{employee.salary}}">{{employee.salary}}</td>
-                    <td>{{employee.bonus}}</td>
+                    <td [salaryType]="employee.salary">{{employee.salary | myCurrency}}</td>
+                    <td>{{employee.bonus | myCurrency}}</td>
+                    <td>
+                        <a href="javascript:void(0)" (click)="openEditModal(employee)">Editar</a>
+                        <a href="javascript:void(0)" (click)="openDeleteModal(employee)">Excluir</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -29,3 +33,5 @@
 </div>
 
 <employee-new-modal (onSubmit)="onNewEmployee($event)"></employee-new-modal>
+<employee-edit-modal [employee]="employeeToEdit" (onSubmit)="onEditEmployee($event)"></employee-edit-modal>
+<employee-delete-modal [employee]="employeeToDelete" (onDestroy)="onDeleteEmployee($event)"></employee-delete-modal>
