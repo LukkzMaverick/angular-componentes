@@ -28,7 +28,7 @@ import { SalaryTypeDirective } from './directives/salary-type.directive';
     AlertSuccessComponent,
     EmployeeEditModalComponent,
     EmployeeDeleteModalComponent,
-    MyCurrencyPipe
+    MyCurrencyPipe,
   ],
   imports: [
     BrowserModule,
