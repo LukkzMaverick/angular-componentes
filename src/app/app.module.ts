@@ -18,6 +18,7 @@ import {
     EmployeeNewModalComponent
 } from './components/employee-new-modal/employee-new-modal.component';
 import { SalaryTypeDirective } from './directives/salary-type.directive';
+import { ModalComponent } from './components/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { SalaryTypeDirective } from './directives/salary-type.directive';
     EmployeeEditModalComponent,
     EmployeeDeleteModalComponent,
     MyCurrencyPipe,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
