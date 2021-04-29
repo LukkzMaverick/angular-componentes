@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core';
 import { Employee, EmployeeService } from '../../services/employee.service';
-import { ModalComponent } from '../modal/modal.component';
 import { Modalable } from '../modal/modalable';
 import { EventEmitter } from '@angular/core';
 
@@ -36,6 +35,14 @@ export class EmployeeNewModalComponent extends Modalable implements OnInit {
     this.onSubmit.emit(this.employee)
     this._resetEmployee()
     this.hide()
+  }
+
+  fechou(event){
+    console.log(event)
+  }
+
+  mostrou(event){
+    console.log(event)
   }
 
   _resetEmployee(){

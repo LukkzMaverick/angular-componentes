@@ -1,4 +1,5 @@
-import { ElementRef, Input } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { ElementRef, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 declare const $;
 
@@ -7,12 +8,24 @@ declare const $;
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent implements OnInit {  
+export class ModalComponent implements OnInit { 
+  
+  @Output()
+  onHide: EventEmitter<any> = new EventEmitter<any>()
+
+  @Output()
+  onShow: EventEmitter<any> = new EventEmitter<any>()
 
   constructor(private element: ElementRef) { }
 
   ngOnInit(): void {
     this.addClasses()
+    $(this.divModal).on('hidden.bs.modal', (e) => {
+      this.onHide.emit(e)
+    })
+    $(this.divModal).on('shown.bs.modal', (e) => {
+      this.onShow.emit(e)
+    })
   }
 
   private addClasses(): void{

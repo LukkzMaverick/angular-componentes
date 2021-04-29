@@ -2,7 +2,7 @@
   
   <!-- Modal -->
   <form>
-    <modal >
+    <modal (onHide)="fechou($event)" (onShow)="mostrou($event)">
           <h5 modal-title>Novo Empregado</h5>
           <div modal-body>
               <div class="form-group">
