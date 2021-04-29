@@ -1,4 +1,4 @@
-import { ElementRef } from '@angular/core';
+import { ElementRef, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 declare const $;
 
@@ -7,11 +7,18 @@ declare const $;
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit {  
 
   constructor(private element: ElementRef) { }
 
   ngOnInit(): void {
+    this.addClasses()
+  }
+
+  private addClasses(): void{
+    this.divModal.querySelector('[modal-title]').classList.add('modal-title')
+    this.divModal.querySelector('[modal-body]').classList.add('modal-body')
+    this.divModal.querySelector('[modal-footer]').classList.add('modal-footer')
   }
 
   show(): void{
