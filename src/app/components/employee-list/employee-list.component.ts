@@ -61,4 +61,8 @@ export class EmployeeListComponent implements OnInit {
     console.log(employ)
   }
 
+  fechou(event){
+    console.log(event)
+  }
+
 }

@@ -32,6 +32,6 @@
 
 </div>
 
-<employee-new-modal (onSubmit)="onNewEmployee($event)"></employee-new-modal>
+<employee-new-modal (onSubmit)="onNewEmployee($event)" (onHide)="fechou($event)"></employee-new-modal>
 <employee-edit-modal [employee]="employeeToEdit" (onSubmit)="onEditEmployee($event)"></employee-edit-modal>
 <employee-delete-modal [employee]="employeeToDelete" (onDestroy)="onDeleteEmployee($event)"></employee-delete-modal>
