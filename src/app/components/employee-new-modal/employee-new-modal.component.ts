@@ -30,7 +30,6 @@ export class EmployeeNewModalComponent extends Modalable implements OnInit {
   }
 
   addEmployee(){
-    console.log('ssss')
     this.employeeService.addEmployee(this.employee)
     this.onSubmit.emit(this.employee)
     this._resetEmployee()
