@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, ViewChild } from '@angular/core';
 import { ElementRef, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 declare const $;
@@ -16,7 +16,10 @@ export class ModalComponent implements OnInit {
   @Output()
   onShow: EventEmitter<any> = new EventEmitter<any>()
 
-  constructor(private element: ElementRef) { }
+  @ViewChild('modal', {static: true})
+  private modal: ElementRef;
+
+  constructor() { }
 
   ngOnInit(): void {
     this.addClasses()
@@ -42,9 +45,8 @@ export class ModalComponent implements OnInit {
     $(this.divModal).modal('hide')
   }
 
-  private get divModal() : HTMLElement{
-    const nativeElement:HTMLElement = this.element.nativeElement
-    return nativeElement.firstChild as HTMLElement
+  get divModal(){
+    return this.modal.nativeElement
   }
 
 }
