@@ -20,6 +20,8 @@ import {
 import { SalaryTypeDirective } from './directives/salary-type.directive';
 import { ModalComponent } from './components/modal/modal.component';
 import { InputDirective } from './directives/input.directive';
+import { GetViewContainerDirective } from './directives/get-view-container.directive';
+import { TestDynamicComponentComponent } from './components/test-dynamic-component/test-dynamic-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,11 @@ import { InputDirective } from './directives/input.directive';
     MyCurrencyPipe,
     ModalComponent,
     InputDirective,
+    GetViewContainerDirective,
+    TestDynamicComponentComponent,
+  ],
+  entryComponents:[
+    TestDynamicComponentComponent
   ],
   imports: [
     BrowserModule,
