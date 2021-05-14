@@ -3,6 +3,8 @@ import { ElementRef, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 declare const $;
 
+//service - abrir o modal - modal generico e modal especifico
+//
 @Component({
   selector: 'modal',
   templateUrl: './modal.component.html',
